@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ===================================================
+   DESIGN TOKENS
+=================================================== */
+
+:root {
+  --background: #f8f5ef;
+  --background-secondary: #efe7da;
+
+  --card: #fcfaf6;
+
+  --text-primary: #3f3125;
+  --text-secondary: #6b5d4d;
+
+  --accent: #c68642;
+  --accent-hover: #b97937;
+
+  --green: #6f8a61;
+
+  --border: #e7dfd2;
+
+  --shadow-sm: 0 6px 18px rgba(63, 49, 37, 0.05);
+
+  --shadow-md: 0 12px 28px rgba(63, 49, 37, 0.08);
+
+  --shadow-lg: 0 20px 40px rgba(63, 49, 37, 0.12);
+
+  --radius-card: 18px;
+
+  --radius-button: 12px;
+
+  --container: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--background);
+
+  /* Handmade paper feeling */
+  background-image:
+      radial-gradient(circle at 15% 20%, rgba(198,134,66,.05), transparent 32%),
+      radial-gradient(circle at 85% 12%, rgba(111,138,97,.04), transparent 28%),
+      radial-gradient(circle at 70% 85%, rgba(198,134,66,.03), transparent 35%);
+
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* Typography */
+
+.heading-xl {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.heading-lg {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.heading-md {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 600;
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+/* Utility */
+
+.section {
+  padding: 7rem 0;
+}
+
+.container-custom {
+  width: min(var(--container), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: all .35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Decorative Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        repeating-radial-gradient(
+            circle at center,
+            rgba(0,0,0,.010) 0,
+            rgba(0,0,0,.010) 1px,
+            transparent 2px,
+            transparent 7px
+        );
+
+    opacity:.20;
+}
